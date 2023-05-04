@@ -1,5 +1,11 @@
 # WEB - Masai E-Commerce with LS
 
+
+## Live Link
+
+The landing page can be viewed live at [https://mock-assessment-3.netlify.app/](https://mock-assessment-3.netlify.app/).
+
+
 ## Submission Instructions [Please note]
 
 ## Maximum Marks - 10
