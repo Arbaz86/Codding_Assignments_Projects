@@ -1,0 +1,81 @@
+.dashboard_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dash_heading {
+  font-size: 32px;
+  margin: 20px 0px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+}
+form input {
+  padding: 5px 10px;
+  font-size: larger;
+  width: 400px;
+}
+.genre_box {
+  display: flex;
+  gap: 20px;
+}
+
+select {
+  padding: 5px;
+  font-size: larger;
+}
+form label {
+  font-size: large;
+  margin: 0px;
+  margin-bottom: -10px;
+}
+form button {
+  padding: 8px;
+  font-size: large;
+  background-color: black;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* table */
+
+table {
+  border-collapse: collapse;
+  margin: 50px;
+  text-align: center;
+}
+
+tr th,
+tr td {
+  padding: 8px 12px;
+  font-size: larger;
+  width: 2%;
+}
+
+tr td img {
+  height: 100px;
+  width: 70px;
+}
+
+tr td button {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  font-size: 25px;
+  font-variant: small-caps;
+  margin-top: 20px;
+}

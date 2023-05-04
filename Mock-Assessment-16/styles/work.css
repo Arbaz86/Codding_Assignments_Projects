@@ -1,0 +1,82 @@
+.work__container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.work__headings h4 {
+  color: #e9c4a0;
+  font-size: 16px;
+}
+
+.work__headings h1 {
+  font-size: 42px;
+  color: #141415;
+}
+
+.gallery__grid {
+  margin-top: 30px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 18%);
+  grid-template-rows: repeat(2, 220px);
+
+  grid-template-areas:
+    "gal__1 gal__1 gal__2 gal__2"
+    "gal__3 gal__4 gal__2 gal__2";
+
+  gap: 30px;
+}
+
+.gal__1 {
+  grid-area: gal__1;
+  background-image: url("https://preview.colorlib.com/theme/hiroto/img/home-room/hr-4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.gal__2 {
+  grid-area: gal__2;
+  background-image: url("https://preview.colorlib.com/theme/hiroto/img/home-room/hr-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.gal__3 {
+  grid-area: gal__3;
+  background-image: url("https://preview.colorlib.com/theme/hiroto/img/home-room/hr-2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.gal__4 {
+  grid-area: gal__4;
+  background-image: url("https://preview.colorlib.com/theme/hiroto/img/home-room/hr-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 980px) {
+  .work__headings h1 {
+    font-size: 32px;
+  }
+
+  .gallery__grid {
+    grid-template-rows: 200px 200px 320px;
+
+    grid-template-areas:
+      "gal__1 gal__1 gal__1 gal__1"
+      "gal__3 gal__3 gal__4 gal__4"
+      "gal__2 gal__2 gal__2 gal__2";
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .gallery__grid {
+    grid-template-rows: 200px 200px 200px 300px;
+
+    grid-template-areas:
+      "gal__1 gal__1 gal__1 gal__1"
+      "gal__3 gal__3 gal__3 gal__3"
+      "gal__4 gal__4 gal__4 gal__4"
+      "gal__2 gal__2 gal__2 gal__2";
+  }
+}

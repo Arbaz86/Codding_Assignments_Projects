@@ -1,0 +1,42 @@
+.tags__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tags__container h2 {
+  margin: 35px;
+  font-size: 32px;
+}
+
+.tags__data {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: auto;
+  justify-content: center;
+  gap: 5px;
+  row-gap: 20px;
+}
+
+.tags__data button {
+  padding: 10px 20px;
+  font-weight: 700;
+  background-color: #f2f5f7;
+  border: 0px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .tags__data {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .tags__data {
+    width: 90%;
+  }
+}

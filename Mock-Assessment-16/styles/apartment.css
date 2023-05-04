@@ -1,0 +1,93 @@
+.apartment__container {
+  background-color: #f2f5f7;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.apartment__headings h1 {
+  font-size: 42px;
+  color: #141415;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.rooms__cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.first__cards,
+.second__cards {
+  display: flex;
+}
+
+.singleTop__card,
+.singleBottom__card {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+}
+.singleTop__card img,
+.singleBottom__card img {
+  width: 50%;
+}
+.card__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: auto;
+}
+.card__rooms__info p {
+  margin: 5px;
+  color: rgb(113, 113, 113);
+  font-weight: 600;
+}
+.card__rooms__info p b {
+  color: #141415;
+}
+.star__icon i {
+  color: #fc728f;
+  margin: 0px 3px;
+  font-size: 14px;
+}
+.card__details h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.card__details button {
+  padding: 8px 20px;
+  border: 1px solid rgba(181, 181, 181, 0.614);
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 980px) {
+  .first__cards,
+  .second__cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .singleTop__card,
+  .singleBottom__card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+  }
+  .singleTop__card img,
+  .singleBottom__card img {
+    width: 100%;
+  }
+  .card__details {
+    padding: 5px 0px;
+  }
+  .singleBottom__card {
+    background-color: #f2f5f7;
+    margin-top: 30px;
+  }
+}

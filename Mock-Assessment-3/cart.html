@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <style>
+      /* Write all necessary css here  */
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 15px;
+        padding: 8px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .nav a {
+        text-decoration: none;
+        font-size: 20px;
+        color: blue;
+      }
+      .nav a:hover {
+        text-decoration: underline;
+      }
+
+      #total {
+        text-align: center;
+      }
+      #cart-total {
+        color: rgb(0, 89, 255);
+      }
+
+      #cart-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      #cart-container div {
+        padding: 10px;
+        margin: 10px;
+        height: 620px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      #cart-container div img {
+        height: 400px;
+        width: 100%;
+      }
+      #cart-container div h3 {
+        margin: 10px 0px;
+      }
+      #cart-container div p {
+        font-weight: 500;
+        margin: 10px 0px;
+      }
+
+      #cart-container div button {
+        padding: 5px 8px;
+        font-size: 15px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <h1>Masai E-Commerce</h1>
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+    <h1 id="total">
+      Your Total cart Price is:- <span id="cart-total">0</span>
+    </h1>
+    <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
+    </div>
+  </body>
+  <script>
+    // Write all necessary JS here
+    let cartContainer = document.getElementById("cart-container");
+    let cartTotal = document.getElementById("cart-total");
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
+
+    function appendData(data) {
+      let total = 0;
+      cartTotal.textContent = total;
+      cartContainer.innerHTML = "";
+      data?.map((el) => {
+        let quantity = 1;
+        total += Number(el.price);
+        cartTotal.textContent = total;
+
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = el.img;
+
+        let brand = document.createElement("h2");
+        brand.textContent = el.brand;
+
+        let price = document.createElement("h3");
+        price.textContent = "₹" + el.price;
+
+        let details = document.createElement("p");
+        details.textContent = el.details;
+
+        let category = document.createElement("p");
+        category.textContent = "Category:-" + el.category;
+
+        let incrementBtn = document.createElement("button");
+        incrementBtn.textContent = "+";
+        incrementBtn.addEventListener("click", () => {
+          quantity++;
+          total += Number(el.price);
+          cartTotal.textContent = total;
+          span.textContent = quantity;
+        });
+
+        let span = document.createElement("span");
+        span.textContent = quantity;
+
+        let decrementBtn = document.createElement("button");
+        decrementBtn.textContent = "-";
+        decrementBtn.addEventListener("click", () => {
+          if (quantity <= 1) {
+            return;
+          }
+          quantity--;
+          total -= Number(el.price);
+          cartTotal.textContent = total;
+          span.textContent = quantity;
+        });
+
+        let remove = document.createElement("button");
+        remove.textContent = "Remove";
+        remove.addEventListener("click", () => removeItem(el));
+
+        div.append(
+          img,
+          brand,
+          price,
+          details,
+          category,
+          incrementBtn,
+          span,
+          decrementBtn,
+          remove
+        );
+
+        cartContainer.appendChild(div);
+      });
+    }
+
+    appendData(cartData);
+
+    function removeItem(data) {
+      let filtered = cartData.filter((item) => item.id != data.id);
+
+      localStorage.setItem("cart", JSON.stringify(filtered));
+      appendData(filtered);
+    }
+  </script>
+</html>

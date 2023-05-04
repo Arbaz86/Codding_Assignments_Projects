@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Page</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: rgb(241, 241, 241);
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 350px;
+        padding: 30px 20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background-color: white;
+      }
+
+      form input {
+        padding: 5px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="name" placeholder="Name" />
+      <input type="number" id="cardNo" placeholder="Card No" />
+      <input type="number" id="cardCvv" placeholder="CVV" />
+      <input type="submit" value="Confirm" />
+    </form>
+  </body>
+  <script>
+    let form = document.querySelector("form");
+    form.addEventListener("submit", handlePayment);
+
+    function handlePayment(e) {
+      e.preventDefault();
+
+      let name = form.name.value;
+      let cardNo = form.cardNo.value;
+      let cardCvv = form.cardCvv.value;
+
+      if (name !== "" && cardNo !== "" && cardCvv !== "") {
+        window.location.href = "otp.html";
+        return;
+      }
+
+      alert("Any of the Given fields are empty");
+    }
+  </script>
+</html>

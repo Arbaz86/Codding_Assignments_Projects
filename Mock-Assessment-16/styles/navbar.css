@@ -1,0 +1,97 @@
+#navbar {
+  background-image: url("https://cdn.pixabay.com/photo/2019/09/12/19/50/boats-4472502_960_720.jpg");
+  height: 100vh;
+  width: 99vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.top__nav {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  color: white;
+  padding: 5px 5%;
+  top: 2%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top__nav button {
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  border: 0px;
+  font-size: 20px;
+}
+
+.middle__nav {
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.middle__nav h2 {
+  font-size: 52px;
+  margin: 10px;
+}
+
+.middle__nav p {
+  margin: 10px 0px 20px;
+}
+
+.nav__exportBtn {
+  background-color: #e7185d;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 0px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.nav__downloadBtn {
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  padding: 8px 20px;
+  font-size: 11px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .middle__nav h1 {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .middle__nav h2 {
+    font-size: 30px;
+  }
+  .middle__nav p {
+    font-size: 14px;
+  }
+
+  .middle__navBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .middle__navBtn button {
+    width: 90%;
+    margin: auto;
+  }
+}

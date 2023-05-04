@@ -1,0 +1,76 @@
+.posts__sec {
+  display: grid;
+  grid-template-columns: 50% 18%;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.posts__design {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 50px;
+}
+
+.post_infos {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.post__des h3 {
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.popular__posts h2 {
+  margin-left: 50px;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.about_des_com {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.about_des_com p {
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.social__icons {
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+#posts__title {
+  font-size: 8px;
+  font-size: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+@media only screen and (max-width: 1080px) {
+  .posts__sec {
+    grid-template-columns: 50%;
+    margin-top: 50px;
+  }
+  .post_infos {
+    grid-template-columns: repeat(1, 100%);
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .posts__sec {
+    grid-template-columns: 100%;
+    margin-top: 50px;
+  }
+  .post_infos {
+    grid-template-columns: repeat(1, 100%);
+  }
+  .about__posts {
+    padding: 10px;
+  }
+}

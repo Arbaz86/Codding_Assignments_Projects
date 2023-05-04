@@ -1,0 +1,40 @@
+.otp__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.otp__container h1 {
+  margin: 30px;
+}
+
+.otp__container input {
+  width: 45px;
+  font-size: 32px;
+  height: 40px;
+  text-align: center;
+}
+
+.sub__btn {
+  text-align: center;
+  margin: 50px;
+}
+
+.sub__btn button {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 0px;
+  outline: 0px;
+  color: white;
+  background-color: #007f81;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.sub__btn button:hover {
+  background-color: #006a6b;
+}

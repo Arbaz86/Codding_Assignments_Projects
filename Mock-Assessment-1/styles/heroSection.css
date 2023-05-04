@@ -1,0 +1,138 @@
+.hero-section {
+  margin-top: 30px;
+}
+
+.hero-about-us {
+  width: 66%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-us-details {
+  width: 50%;
+  padding: 20px;
+}
+.small-heading-text {
+  color: #e9ad28;
+}
+
+.hero-heading {
+  margin-top: 20px;
+  font-size: 38px;
+  color: #19191a;
+  letter-spacing: -1px;
+  line-height: 50px;
+}
+
+.hero-des {
+  color: #777c81;
+  letter-spacing: 1px;
+  margin: 20px 0px;
+}
+
+.hero-des p {
+  margin: 10px 0px;
+  line-height: 27px;
+}
+
+.hero-signature {
+  margin-top: 60px;
+}
+
+/* hero description */
+.services-box {
+  width: 65%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 250px);
+  justify-content: center;
+  justify-items: center;
+  row-gap: 0px;
+  column-gap: 10px;
+  margin-top: 70px;
+}
+.services-box > div {
+  padding: 10px;
+}
+
+.services-box > div {
+  padding: 10px;
+}
+
+.service-heading h2 {
+  color: #363a3d;
+  letter-spacing: -1px;
+  font-size: 24px;
+  margin: 25px 0px 15px;
+}
+
+.services-des p {
+  font-size: 16px;
+  color: #777c81;
+  line-height: 1.5em;
+}
+
+@media only screen and (max-width: 1420px) {
+  .hero-about-us {
+    width: 80%;
+  }
+  .about-us-details {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .hero-img img {
+    height: 80%;
+    width: 100%;
+  }
+  .about-us-details {
+    width: 95%;
+    padding: 20px;
+  }
+  .hero-heading {
+    font-size: 35px;
+    letter-spacing: -1px;
+  }
+  .hero-about-us {
+    width: 90%;
+    flex-direction: column;
+  }
+  .services-box {
+    width: 80%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .hero-img {
+    padding: 10px;
+  }
+  .hero-img img {
+    height: 501px;
+    width: 337px;
+  }
+  .about-us-details {
+    width: 100%;
+    padding: 20px;
+  }
+  .hero-about-us {
+    width: 90%;
+    flex-direction: column;
+  }
+  .services-box {
+    width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 250px);
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .services-box {
+    width: 95%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

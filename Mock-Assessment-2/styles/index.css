@@ -1,0 +1,79 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Navbar  */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  font-size: 20px;
+  height: 50px;
+  align-items: center;
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  transition: all 0.5s ease;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Registration */
+.register_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.reg_heading {
+  font-size: 32px;
+  margin: 20px 0px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+}
+form input {
+  padding: 5px 10px;
+  font-size: larger;
+  width: 400px;
+}
+.station_box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 5px 0px 3px;
+}
+.station_dot {
+  margin: 5px 16px;
+}
+select {
+  padding: 5px;
+  font-size: larger;
+}
+form label {
+  font-size: large;
+  margin: 0px;
+  margin-bottom: -10px;
+}
+form button {
+  padding: 8px;
+  font-size: large;
+  background-color: black;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}

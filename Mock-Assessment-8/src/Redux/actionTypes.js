@@ -1,0 +1,3 @@
+export const GET_SIGNUP_USER = "GET_SIGNUP_USER";
+export const ADD_SIGNUP_USER = "ADD_SIGNUP_USER";
+export const SINGIN_USER = "SINGIN_USER";

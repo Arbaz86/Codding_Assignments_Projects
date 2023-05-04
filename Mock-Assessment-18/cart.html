@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+
+    <style>
+      .nav {
+        display: flex;
+        background-color: black;
+        justify-content: space-around;
+        padding: 10px;
+      }
+      .nav a {
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 25px;
+      }
+      .nav a:hover {
+        text-decoration: underline;
+      }
+
+      div {
+        text-align: center;
+      }
+
+      #cart-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        margin: 20px;
+        align-items: center;
+        align-content: space-around;
+      }
+      #cart-container > div {
+        height: 100%;
+        padding: 10px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      #cart-container > div > img {
+        width: 70%;
+        height: 250px;
+      }
+
+      #cart-container div p:nth-child(odd) {
+        font-size: 22px;
+        color: rgb(0, 0, 0);
+        margin: 5px;
+      }
+      #cart-container div p:nth-child(even) {
+        font-size: 20px;
+        color: rgb(111, 111, 111);
+        text-decoration: line-through;
+        margin: 5px;
+      }
+
+      #cart-container div button {
+        margin: auto;
+        padding: 7px 12px;
+        font-weight: 700;
+        border-radius: 5px;
+        border: 0px;
+        cursor: pointer;
+        background-color: rgb(0, 61, 112);
+        font-size: 16px;
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        transition: all 0.3s ease;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+      <a href="./payment.html">Payment</a>
+    </div>
+    <div>
+      <h1>Your Total cart Price is:- <span id="cart-total">0</span></h1>
+      <input type="text" id="cupon-filled" placeholder="masai30" />
+      <button id="cupon-active">Submit</button>
+    </div>
+    <div id="cart-container">
+      <!-- Here Append All the cart carts  -->
+    </div>
+  </body>
+  <script>
+    let cartContainer = document.getElementById("cart-container");
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    let cartTotal = document.getElementById("cart-total");
+    let couponBtn = document.getElementById("cupon-active");
+
+    let total = 0;
+
+    function appendCartData(data) {
+      data?.forEach((el) => {
+        let quantity = 1;
+        total += Number(el.price);
+        cartTotal.textContent = total;
+
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src =
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT41y0NTc6rz9UZqWoGv7_JMGsx6oKyks5Z6A&usqp=CAU";
+
+        let name = document.createElement("h3");
+        name.textContent = el.name;
+
+        let price = document.createElement("p");
+        price.textContent = "₹" + el.price;
+
+        let strikedoffprice = document.createElement("p");
+        strikedoffprice.textContent = el.strikedoffprice;
+
+        let span = document.createElement("span");
+        span.textContent = quantity;
+
+        let incrementBtn = document.createElement("button");
+        incrementBtn.textContent = "+";
+        incrementBtn.addEventListener("click", () => {
+          quantity++;
+          total += Number(el.price);
+          cartTotal.textContent = total;
+          span.textContent = quantity;
+        });
+
+        let decrementBtn = document.createElement("button");
+        decrementBtn.textContent = "-";
+        decrementBtn.addEventListener("click", () => {
+          if (quantity <= 1) {
+            return;
+          }
+
+          quantity--;
+          total -= Number(el.price);
+          cartTotal.textContent = total;
+          span.textContent = quantity;
+        });
+
+        div.append(
+          img,
+          name,
+          price,
+          strikedoffprice,
+          incrementBtn,
+          span,
+          decrementBtn
+        );
+
+        cartContainer.appendChild(div);
+      });
+    }
+    appendCartData(cartData);
+
+    let couponCount = 0;
+    couponBtn.addEventListener("click", () => {
+      let value = document.getElementById("cupon-filled").value;
+
+      if (value.toLowerCase() === "masai30" && couponCount == 0) {
+        total -= +Math.floor(total * 0.3);
+        console.log(total);
+        cartTotal.textContent = total;
+        couponCount++;
+      }
+    });
+  </script>
+</html>

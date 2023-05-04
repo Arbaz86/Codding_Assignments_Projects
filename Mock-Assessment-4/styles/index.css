@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  gap: 30px;
+}
+
+.admin_section,
+.user_section {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 40px 50px;
+  font-size: 30px;
+}
+
+.admin_section h3,
+.user_section h3 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.admin_section a,
+.user_section a {
+  border: 1px solid;
+  padding: 8px 10px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+
+.admin_section a:hover,
+.user_section a:hover {
+  color: yellow;
+}

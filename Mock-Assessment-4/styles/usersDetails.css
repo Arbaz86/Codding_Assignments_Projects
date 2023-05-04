@@ -1,0 +1,23 @@
+.user_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user_heading {
+  font-size: 32px;
+  margin: 20px 0px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 50px;
+  text-align: center;
+}
+
+tr th,
+tr td {
+  padding: 8px 12px;
+  font-size: larger;
+  width: 2%;
+}

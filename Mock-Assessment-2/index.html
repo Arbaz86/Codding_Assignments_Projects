@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- stylesheet linked-->
+    <link rel="stylesheet" href="./styles/index.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- The navbar component has been added here  -->
+      <nav class="navbar"></nav>
+
+      <div class="register_div">
+        <h2 class="reg_heading">Registration</h2>
+        <form id="form">
+          <label for="unique_id">Id</label>
+          <input
+            type="text"
+            id="unique_id"
+            placeholder="Enter Unique Id"
+            required
+          />
+
+          <label for="user_name">Name</label>
+          <input
+            type="text"
+            id="user_name"
+            placeholder="Enter Name"
+            minlength="4"
+            required
+          />
+          <label for="user_age">Age</label>
+          <input type="number" id="user_age" placeholder="Enter Age" required />
+
+          <div class="station_box">
+            <label for="from_station">From</label>
+            <select id="from_station">
+              <option value="Bangalore">Bangalore</option>
+              <option value="Pune">Pune</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+
+            <h1 class="station_dot">:</h1>
+
+            <label for="to_station">To</label>
+            <select id="to_station">
+              <option value="Bangalore">Bangalore</option>
+              <option value="Pune">Pune</option>
+              <option value="Hyderabad">Hyderabad</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Mumbai">Mumbai</option>
+            </select>
+          </div>
+
+          <label for="journey_date">Date</label>
+          <input
+            type="date"
+            id="journey_date"
+            placeholder="dd-mm-yyyy"
+            required
+          />
+
+          <label for="seat_type">Seat Type</label>
+          <select id="seat_type">
+            <option value="first_class">AC First Class</option>
+            <option value="sleeper_class">Sleeper Class</option>
+            <option value="second_class">Second Class</option>
+            <option value="general">General</option>
+          </select>
+
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="./components/navbar.js"></script>
+  <script src="./scripts/index.js"></script>
+</html>

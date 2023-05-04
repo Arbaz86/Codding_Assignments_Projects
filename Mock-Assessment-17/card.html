@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- StyleSheet Linked -->
+    <link rel="stylesheet" href="./styles/card.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Page</title>
+  </head>
+  <body>
+    <!-- card part -->
+    <div class="card__container">
+      <div class="card__view">
+        <div class="card__layout__div">
+          <div class="visa__icon">
+            <iconify-icon icon="simple-icons:visa"></iconify-icon>
+          </div>
+          <div class="card__chip">
+            <iconify-icon icon="flat-color-icons:sim-card-chip"></iconify-icon>
+          </div>
+          <div class="card__nums">
+            <h2 class="card__nums1">1234</h2>
+            <h2 class="card__nums2">4125</h2>
+            <h2 class="card__nums3">3520</h2>
+            <h2 class="card__nums4">1234</h2>
+          </div>
+
+          <div class="card__hecvc">
+            <div class="card__holder">
+              <div class="card__holder__show">
+                <p>CARD HOLDER</p>
+                <h2 id="showHolder">John Smith</h2>
+              </div>
+            </div>
+            <div class="card__expiry">
+              <div class="card__expiry__show">
+                <p>EXPIRES</p>
+                <h2>
+                  <span class="show__expiry__month">09</span> /
+                  <span class="show__expiry__year">20</span>
+                </h2>
+              </div>
+            </div>
+            <div class="card__cvc">
+              <div class="card__cvc__show">
+                <p>CVC</p>
+                <h2 class="show__cvc">345</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- form part -->
+      <div class="card__form">
+        <div class="card__payment">
+          <h2 class="form__heading">Payment details</h2>
+        </div>
+        <div class="card_payment_form">
+          <div class="card__holder__input">
+            <label for="holdername">CARDHOLDER NAME</label>
+            <div class="holder__icon__input">
+              <iconify-icon icon="mdi:user-online-outline"></iconify-icon>
+              <input
+                type="text"
+                id="holdername"
+                name="holderName"
+                oninput="handleInput(event)"
+              />
+            </div>
+          </div>
+
+          <div class="card__nums__input">
+            <label for="cardNumber1">CARD NUMBER</label>
+            <div class="number__icon__input">
+              <iconify-icon icon="mdi:credit-card-edit-outline"></iconify-icon>
+              <input
+                type="tel"
+                maxlength="4"
+                placeholder="xxxx"
+                id="cardNumber1"
+                name="cardNumber1"
+                oninput="handleInput(event, this, 'cardNumber2')"
+              />
+              <input
+                type="tel"
+                maxlength="4"
+                placeholder="xxxx"
+                id="cardNumber2"
+                name="cardNumber2"
+                oninput="handleInput(event, this, 'cardNumber3')"
+              />
+              <input
+                type="tel"
+                maxlength="4"
+                placeholder="xxxx"
+                id="cardNumber3"
+                name="cardNumber3"
+                oninput="handleInput(event, this, 'cardNumber4')"
+              />
+              <input
+                type="tel"
+                maxlength="4"
+                placeholder="xxxx"
+                id="cardNumber4"
+                name="cardNumber4"
+                oninput="handleInput(event)"
+              />
+            </div>
+          </div>
+
+          <div class="expiry__me_cvc">
+            <div class="card__expiryM__input">
+              <label for="expiryMonth">EXPIRY MONTH</label>
+              <div class="expiryMonth__icon__input">
+                <iconify-icon icon="uil:calender"></iconify-icon>
+                <input
+                  type="tel"
+                  maxlength="2"
+                  id="expirymonth"
+                  name="expiryMonth"
+                  oninput="handleInput(event)"
+                  placeholder="09"
+                />
+              </div>
+            </div>
+            <div class="card__expiryY__input">
+              <label for="expiryYear">EXPIRY YEAR</label>
+              <div class="expiryYear__icon__input">
+                <iconify-icon icon="uit:calender"></iconify-icon>
+                <input
+                  type="tel"
+                  maxlength="2"
+                  id="expiryYear"
+                  name="expiryYear"
+                  oninput="handleInput(event)"
+                  placeholder="20"
+                />
+              </div>
+            </div>
+            <div class="card__cvc__input">
+              <label for="cvc">CVC</label>
+              <div class="cvc__icon__input">
+                <iconify-icon
+                  icon="material-symbols:lock-outline-sharp"
+                ></iconify-icon>
+                <input
+                  type="tel"
+                  maxlength="3"
+                  id="cvc"
+                  name="cvc"
+                  oninput="handleInput(event)"
+                  placeholder="345"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="payment__amount">
+          <div>
+            Payment amount :
+            <h2>12 300₹</h2>
+          </div>
+        </div>
+        <div class="pay__button">
+          <button id="pay">PAY</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./scripts/card.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</html>

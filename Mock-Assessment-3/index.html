@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* Write all necessary css here  */
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 15px;
+        padding: 8px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .nav a {
+        text-decoration: none;
+        font-size: 20px;
+        color: blue;
+      }
+      .nav a:hover {
+        text-decoration: underline;
+      }
+      #filter {
+        padding: 10px;
+        font-size: larger;
+        margin: 10px 50px;
+      }
+      #filter option {
+        padding: 5px;
+        font-size: 18px;
+      }
+      #product-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+
+      #product-container div {
+        padding: 10px;
+        margin: 10px;
+        height: 620px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      #product-container div img {
+        height: 400px;
+        width: 100%;
+      }
+      #product-container div h3 {
+        margin: 10px 0px;
+      }
+      #product-container div p {
+        font-weight: 500;
+        margin: 10px 0px;
+      }
+      #product-container div button {
+        padding: 5px 10px;
+        font-size: larger;
+        background-color: rgb(0, 179, 214);
+        color: aliceblue;
+        border-radius: 5px;
+        border: 0px;
+        cursor: pointer;
+        text-align: center;
+        margin: 10px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Masai E-Commerce</h1>
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+    <!-- Use this Select Tag for Filtering the Products  -->
+    <select id="filter">
+      <option value="">Filter By Category</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Mobile">Mobile</option>
+      <option value="Speakers">Speakers</option>
+    </select>
+    <div id="product-container">
+      <!-- Here Append All the Products  -->
+    </div>
+  </body>
+  <script>
+    // Write all necessary JS here
+    let productContainer = document.getElementById("product-container");
+    let filter = document.getElementById("filter");
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+
+    async function fetchData() {
+      try {
+        let res = await fetch(
+          "https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products"
+        );
+        let data = await res.json();
+        appendData(data.data);
+        return data.data;
+      } catch (error) {
+        console.log(error);
+        return undefined;
+      }
+    }
+    fetchData();
+
+    function appendData(data) {
+      productContainer.innerHTML = "";
+      data.map((el) => {
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = el.img;
+
+        let brand = document.createElement("h2");
+        brand.textContent = el.brand;
+
+        let price = document.createElement("h3");
+        price.textContent = "₹" + el.price;
+
+        let details = document.createElement("p");
+        details.textContent = el.details;
+
+        let category = document.createElement("p");
+        category.textContent = el.category;
+
+        let addToCartBtn = document.createElement("button");
+        addToCartBtn.textContent = "Add To Cart";
+        addToCartBtn.addEventListener("click", () => AddToCart(el));
+
+        div.append(img, brand, price, details, category, addToCartBtn);
+
+        productContainer.appendChild(div);
+      });
+    }
+
+    function AddToCart(data) {
+      let filtered = cartData.filter((item) => item.id == data.id);
+      console.log(filtered);
+
+      if (filtered.length > 0) {
+        alert("Product Already in Cart");
+        return;
+      }
+
+      cartData.push(data);
+      alert("Product Added To Cart");
+      localStorage.setItem("cart", JSON.stringify(cartData));
+    }
+
+    filter.addEventListener("change", async (e) => {
+      let type = e.target.value;
+      let data = await fetchData();
+
+      if (type == "") {
+        appendData(data);
+        return;
+      }
+
+      let filtered = data.filter((item) => item.category == type);
+      appendData(filtered);
+    });
+  </script>
+</html>

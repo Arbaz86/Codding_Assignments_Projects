@@ -1,0 +1,60 @@
+.restaurants_header {
+  padding: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.restaurants_header > h1 {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.restaurants_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pagination {
+  text-align: center;
+}
+.pagination button {
+  background-color: black;
+  color: aliceblue;
+  font-size: 25px;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.pagination button:hover {
+  border: 2px solid red;
+}
+
+.pagination {
+  position: relative;
+}
+.pagination div {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1111112a;
+}
+
+@media screen and (max-width: 1250px) {
+  .restaurants_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .restaurants_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pagination button {
+    font-size: 18px;
+    padding: 3px 8px;
+  }
+}

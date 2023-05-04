@@ -1,0 +1,145 @@
+.gallery-section {
+  margin-top: 100px;
+}
+
+.room-card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 493px);
+  position: relative;
+  gap: 18px;
+}
+
+.rooms-heading-text {
+  text-align: center;
+}
+.rooms-heading-text h2 {
+  font-size: 38px;
+  color: #19191a;
+  letter-spacing: -1px;
+  margin: 20px 0px 50px;
+}
+.rooms-heading-text h5 {
+  color: #e9ad28;
+}
+
+.rooms-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+
+.room-img1 {
+  background-image: url(https://preview.colorlib.com/theme/hiroto/img/home-room/hr-1.jpg);
+}
+.room-img2 {
+  background-image: url(https://preview.colorlib.com/theme/hiroto/img/home-room/hr-2.jpg);
+}
+.room-img3 {
+  background-image: url(https://preview.colorlib.com/theme/hiroto/img/home-room/hr-3.jpg);
+}
+.room-img4 {
+  background-image: url(https://preview.colorlib.com/theme/hiroto/img/home-room/hr-4.jpg);
+}
+
+.room-card-text {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  padding: 0 25px;
+  margin-top: -100px;
+  transition: all, 0.5s;
+  color: white;
+}
+
+.rooms-card:hover .room-card-text {
+  top: 30%;
+}
+
+.room-card-text h2 {
+  font-size: 45px;
+  letter-spacing: -1px;
+}
+
+.room-card-text h2 span {
+  font-size: 16px;
+}
+.room-card-text h2 sup {
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/* Gallery Title */
+.hotel-gallery-des {
+  display: grid;
+  width: 70%;
+  grid-template-columns: repeat(2, 0.8fr);
+  grid-template-rows: repeat(1, 180px);
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  column-gap: 30px;
+  padding: 20px;
+}
+
+.gallery-titles h2 {
+  font-size: 38px;
+  letter-spacing: -1px;
+  margin-top: 20px;
+}
+.gallery-titles h5 {
+  color: #e9ad28;
+}
+
+.gallery-desc p {
+  font-size: 16px;
+  color: #777c81;
+  line-height: 1.5em;
+}
+
+.gallery-desc button {
+  margin-top: 30px;
+  padding: 12px 30px 15px;
+  font-size: 17px;
+  letter-spacing: 1px;
+  background-color: #e9ad28;
+  color: #ffffff;
+  border: 0px;
+  cursor: pointer;
+}
+
+.gallery-desc button span {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1007px) {
+  .room-card-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 493px);
+  }
+  .hotel-gallery-des {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 640px) {
+  .room-card-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 493px);
+  }
+  .hotel-gallery-des {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, 180px);
+  }
+  .hotel-gallery-des {
+    width: 100%;
+  }
+  .gallery-desc p {
+    margin-top: 0px;
+  }
+}

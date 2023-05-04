@@ -1,0 +1,41 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.register-container form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  gap: 2px;
+}
+
+form label {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+form input {
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 18px;
+  border: 0px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  color: yellow;
+}

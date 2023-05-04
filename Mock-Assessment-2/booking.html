@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- stylesheet linked-->
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/booking.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- The navbar component has been added here  -->
+      <nav class="navbar"></nav>
+
+      <div class="booking_div">
+        <h1 class="booking_heading">Ticket Booked</h1>
+
+        <!-- sorting and filtering -->
+        <div class="sort_filter">
+          <label for="filter_seat_type">Seat Type :</label>
+          <select id="filter_seat_type">
+            <option value="all">All</option>
+            <option value="first_class">AC First Class</option>
+            <option value="sleeper_class">Sleeper Class</option>
+            <option value="second_class">Second Class</option>
+            <option value="general">General</option>
+          </select>
+
+          <h1></h1>
+          <label for="sort_by_age">Sort By Age: </label>
+          <select id="sort_by_age">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+
+          <h1></h1>
+          <label for="sort_by_date">Sort by Journey date: </label>
+          <select id="sort_by_date">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Unique ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Journey Date</th>
+              <th>Seat Type</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="./components/navbar.js"></script>
+  <script src="./scripts/booking.js"></script>
+</html>
