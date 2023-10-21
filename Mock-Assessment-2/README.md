@@ -30,7 +30,7 @@ This is a simple train ticket booking system web application developed using HTM
 2. Navigate to the project directory `cd Mock-Assessment-2`.
 3. Open the `index.html` file to access the user registration page.
 4. After registration, navigate to the `dashboard.html` page to manage your booked tickets.
-5. Here you can view the user booked tickets information
+5. Then, navigate to the `booking.html` page you can view the user booked tickets information
 
 ## Author
 
