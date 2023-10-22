@@ -31,8 +31,10 @@ export const Countries = () => {
   }, []);
 
   let handleFilter = (e) => {
-    let value = e.target.value;
-    let filtered = countries.filter((item) => item.region === value);
+    const value = e.target.value;
+    const filtered = value
+      ? countries.filter((item) => item.region === value)
+      : countries;
     setData(filtered);
   };
 
@@ -53,6 +55,8 @@ export const Countries = () => {
   const uniqueData = data.filter(
     (v, i, a) => a.findIndex((t) => t.name.common === v.name.common) === i
   );
+
+  const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   return (
     <Box>
@@ -77,10 +81,10 @@ export const Countries = () => {
           placeholder="Filter by Region"
           w="200px"
         >
-          {countries?.length > 0 &&
-            countries?.map((country, i) => (
-              <option key={i} value={country.region}>
-                {country.region}
+          {regions?.length > 0 &&
+            regions?.map((region, i) => (
+              <option key={i} value={region}>
+                {region}
               </option>
             ))}
         </Select>
