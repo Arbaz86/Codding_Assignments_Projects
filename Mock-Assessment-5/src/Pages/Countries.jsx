@@ -30,8 +30,6 @@ export const Countries = () => {
     }
   }, []);
 
-  console.log(data);
-
   let handleFilter = (e) => {
     let value = e.target.value;
     let filtered = countries.filter((item) => item.region === value);
@@ -40,15 +38,21 @@ export const Countries = () => {
 
   let handleSort = (e) => {
     let value = e.target.value;
-    if (value == "asc") {
-      let newData = data.sort((a, b) => a.population - b.population);
-      setData(newData);
-      console.log(newData);
+    let newData = [...data]; // create a copy of the current data to avoid mutating the state directly
+
+    if (value === "asc") {
+      newData.sort((a, b) => a.population - b.population);
     } else {
-      let newData = data.sort((a, b) => b.population - a.population);
-      setData(newData);
+      newData.sort((a, b) => b.population - a.population);
     }
+
+    setData(newData);
   };
+
+  // Deduplicate the data based on the "common" property
+  const uniqueData = data.filter(
+    (v, i, a) => a.findIndex((t) => t.name.common === v.name.common) === i
+  );
 
   return (
     <Box>
@@ -93,8 +97,8 @@ export const Countries = () => {
         gap={4}
         m="30px"
       >
-        {data?.length > 0 &&
-          data?.map((country, index) => (
+        {uniqueData?.length > 0 &&
+          uniqueData?.map((country, index) => (
             <GridItem w="100%" key={index}>
               <CountriesCart country={country} />
             </GridItem>
